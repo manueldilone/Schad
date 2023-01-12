@@ -52,7 +52,7 @@ public string Adress  { get; set; }
         }
 
 
-        public int obteneridsiguiente()
+        public int obteneridsiguienteCustomer()
         {
 
             using (SqlConnection conexion = BDComun.Siif())
@@ -64,14 +64,26 @@ public string Adress  { get; set; }
                 while (reader.Read())
                 {
 
-                    settCodigo(reader.GetInt32(0));
+                    CustomersId = reader.GetInt32(0);
 
                 }
-                return getCodigo();
+                return CustomersId;
             }
         }
-        public int getCodigo() { return CustomersId; }
-        public void settCodigo(int valor) { CustomersId = valor; }
+
+        public string getDescriptionCustomer(int Id)
+        {
+
+            BDComun d = new BDComun();
+
+            string query = "SELECT CustName FROM " + VariablesGlobales.DBPRINCIPAL + ".Customers where Id=" + Id + "";
+            DataRow drSQL = d.RegistroTabla(query);
+
+
+            return drSQL["CustName"].ToString();
+        }
+
+
 
 
     }

@@ -97,9 +97,9 @@
             label2.AutoSize = true;
             label2.Location = new System.Drawing.Point(412, 22);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(59, 13);
+            label2.Size = new System.Drawing.Size(81, 13);
             label2.TabIndex = 41;
-            label2.Text = "CustName:";
+            label2.Text = "Customer Type:";
             // 
             // label3
             // 
@@ -135,6 +135,7 @@
             this.cmbcustomertype.Name = "cmbcustomertype";
             this.cmbcustomertype.Size = new System.Drawing.Size(329, 21);
             this.cmbcustomertype.TabIndex = 43;
+            this.cmbcustomertype.Click += new System.EventHandler(this.cmbcustomertype_Click);
             // 
             // ckstatus
             // 
@@ -174,6 +175,7 @@
             this.groupBox2.Size = new System.Drawing.Size(869, 391);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // tbldepartamentoDataGridView
             // 

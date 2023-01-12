@@ -42,7 +42,7 @@ namespace SCHAD_TULIO
                 miestilo estilo = new miestilo();
                 estilo.DataGrid (tbldepartamentoDataGridView);
 
-                codDptoTextBox.Enabled = false;
+                txtidf.Enabled = false;
               
                 descripcionTextBox.Enabled = false;
                
@@ -79,7 +79,7 @@ namespace SCHAD_TULIO
                 
                 descripcionTextBox.Enabled = true;
                 descripcionTextBox.Text = "";
-                codDptoTextBox.Text = "";
+                txtidf.Text = "";
                 button2.Enabled = false;
                 btagregar.Enabled = false;
                 bteditar.Enabled = false;
@@ -89,7 +89,7 @@ namespace SCHAD_TULIO
 
 
                 
-                codDptoTextBox.Text = Convert.ToString(CustomerTypes.obteneridsiguiente());
+                txtidf.Text = Convert.ToString(CustomerTypes.obteneridsiguiente());
                
                
             }
@@ -133,7 +133,7 @@ namespace SCHAD_TULIO
                 }
                 if (operacion == 2)
                 {
-                    CustomerTypes.UpdateQuery(Convert.ToInt32(codDptoTextBox.Text),descripcionTextBox.Text);
+                    CustomerTypes.UpdateQuery(Convert.ToInt32(txtidf.Text),descripcionTextBox.Text);
 
                     MessageBox.Show("Registro Modificado"); 
                 }
@@ -256,7 +256,7 @@ namespace SCHAD_TULIO
                    "Borrarando Registro", MessageBoxButtons.YesNo);
                 if (Dialogo == DialogResult.Yes)
                 {
-                    CustomerTypes.DeleteQuery(Convert.ToInt32(codDptoTextBox.Text));
+                    CustomerTypes.DeleteQuery(Convert.ToInt32(txtidf.Text));
 
                     MessageBox.Show("Registro Eliminado Correctamente", "", MessageBoxButtons.OK,
                           MessageBoxIcon.Information);
@@ -277,7 +277,7 @@ namespace SCHAD_TULIO
 
         private void tbldepartamentoDataGridView_Click(object sender, EventArgs e)
         {
-            codDptoTextBox.Text = Convert.ToString(tbldepartamentoDataGridView.CurrentRow.Cells["Id"].Value);
+            txtidf.Text = Convert.ToString(tbldepartamentoDataGridView.CurrentRow.Cells["Id"].Value);
             descripcionTextBox.Text= (string) tbldepartamentoDataGridView.CurrentRow.Cells["Description"].Value;
         }
     }

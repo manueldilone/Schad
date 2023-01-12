@@ -18,6 +18,7 @@ namespace SCHAD_TULIO
         
         int operacion = 0;
         ENTIDAD.Customers Customers = new ENTIDAD.Customers();
+        ENTIDAD.CustomerTypes customerTypes = new ENTIDAD.CustomerTypes();
         public FormCustomer()
         {
             InitializeComponent();
@@ -134,7 +135,7 @@ namespace SCHAD_TULIO
 
 
 
-                txtid.Text = Convert.ToString(Customers.obteneridsiguiente());
+                txtid.Text = Convert.ToString(Customers.obteneridsiguienteCustomer());
                
                
             }
@@ -287,6 +288,54 @@ namespace SCHAD_TULIO
         }
 
         private void tbldepartamentoDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+
+            try
+            {
+
+                if (this.tbldepartamentoDataGridView.Columns[e.ColumnIndex].Name == "Status")
+                    if (Convert.ToBoolean(e.Value).Equals(true))
+                    {
+                        e.CellStyle.BackColor = Color.Green;
+
+                        e.Value = "Activo";
+                    }
+                    else
+                    {
+                        e.CellStyle.BackColor = Color.Red;
+
+                        e.Value = "Inactivo";
+                    }
+                if (this.tbldepartamentoDataGridView.Columns[e.ColumnIndex].Name == "CustomerTypeid")
+
+                {
+                    e.Value = customerTypes.getDescription(Convert.ToInt32(e.Value));
+                }
+                   
+                   
+               
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Precaución. " + ex.Message, "Sistemas Administrativos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void cmbcustomertype_Click(object sender, EventArgs e)
+        {
+            CustomerTypes customerTypes = new CustomerTypes();
+            this.cmbcustomertype.DataSource = customerTypes.ObtenertodosCustomerTypes();
+
+            this.cmbcustomertype.DisplayMember = "Description";
+            this.cmbcustomertype.ValueMember = "Id";
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
         {
 
         }

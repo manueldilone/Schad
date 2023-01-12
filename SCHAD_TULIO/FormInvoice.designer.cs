@@ -46,13 +46,6 @@
             this.txtid = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tbldepartamentoDataGridView = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalItbis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btcancelar = new System.Windows.Forms.Button();
@@ -60,6 +53,14 @@
             this.bteditar = new System.Windows.Forms.Button();
             this.btagregar = new System.Windows.Forms.Button();
             this.btguardar = new System.Windows.Forms.Button();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalItbis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             codDptoLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
@@ -191,6 +192,7 @@
             this.txtprice.Name = "txtprice";
             this.txtprice.Size = new System.Drawing.Size(86, 20);
             this.txtprice.TabIndex = 46;
+            this.txtprice.TextChanged += new System.EventHandler(this.txtprice_TextChanged);
             // 
             // txtQty
             // 
@@ -198,6 +200,7 @@
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(86, 20);
             this.txtQty.TabIndex = 45;
+            this.txtQty.TextChanged += new System.EventHandler(this.txtQty_TextChanged);
             // 
             // cmbcustomer
             // 
@@ -206,6 +209,7 @@
             this.cmbcustomer.Name = "cmbcustomer";
             this.cmbcustomer.Size = new System.Drawing.Size(298, 21);
             this.cmbcustomer.TabIndex = 43;
+            this.cmbcustomer.Click += new System.EventHandler(this.cmbcustomer_Click);
             // 
             // txtid
             // 
@@ -230,6 +234,7 @@
             this.tbldepartamentoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tbldepartamentoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
+            this.CodCliente,
             this.CustomerId,
             this.Qty,
             this.Price,
@@ -243,59 +248,8 @@
             this.tbldepartamentoDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tbldepartamentoDataGridView.Size = new System.Drawing.Size(863, 369);
             this.tbldepartamentoDataGridView.TabIndex = 32;
+            this.tbldepartamentoDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.tbldepartamentoDataGridView_CellFormatting);
             this.tbldepartamentoDataGridView.Click += new System.EventHandler(this.tbldepartamentoDataGridView_Click);
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.FillWeight = 75F;
-            this.Id.HeaderText = "Código";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Width = 75;
-            // 
-            // CustomerId
-            // 
-            this.CustomerId.DataPropertyName = "CustomerId";
-            this.CustomerId.HeaderText = "Customer";
-            this.CustomerId.Name = "CustomerId";
-            this.CustomerId.ReadOnly = true;
-            // 
-            // Qty
-            // 
-            this.Qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Qty.DataPropertyName = "Qty";
-            this.Qty.HeaderText = "Qty";
-            this.Qty.Name = "Qty";
-            this.Qty.ReadOnly = true;
-            // 
-            // Price
-            // 
-            this.Price.DataPropertyName = "Price";
-            this.Price.HeaderText = "Price";
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            // 
-            // TotalItbis
-            // 
-            this.TotalItbis.DataPropertyName = "TotalItbis";
-            this.TotalItbis.HeaderText = "TotalItbis";
-            this.TotalItbis.Name = "TotalItbis";
-            this.TotalItbis.ReadOnly = true;
-            // 
-            // SubTotal
-            // 
-            this.SubTotal.DataPropertyName = "SubTotal";
-            this.SubTotal.HeaderText = "SubTotal";
-            this.SubTotal.Name = "SubTotal";
-            this.SubTotal.ReadOnly = true;
-            // 
-            // Total
-            // 
-            this.Total.DataPropertyName = "Total";
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
             // 
             // groupBox5
             // 
@@ -383,7 +337,67 @@
             this.btguardar.UseVisualStyleBackColor = true;
             this.btguardar.Click += new System.EventHandler(this.btguardar_Click);
             // 
-            // FormInvoiceDetail
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.FillWeight = 75F;
+            this.Id.HeaderText = "Código";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 75;
+            // 
+            // CodCliente
+            // 
+            this.CodCliente.DataPropertyName = "CodCliente";
+            this.CodCliente.HeaderText = "Customers";
+            this.CodCliente.Name = "CodCliente";
+            this.CodCliente.ReadOnly = true;
+            // 
+            // CustomerId
+            // 
+            this.CustomerId.DataPropertyName = "CustomerId";
+            this.CustomerId.HeaderText = "Customers";
+            this.CustomerId.Name = "CustomerId";
+            this.CustomerId.ReadOnly = true;
+            this.CustomerId.Visible = false;
+            // 
+            // Qty
+            // 
+            this.Qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Qty.DataPropertyName = "Qty";
+            this.Qty.HeaderText = "Qty";
+            this.Qty.Name = "Qty";
+            this.Qty.ReadOnly = true;
+            // 
+            // Price
+            // 
+            this.Price.DataPropertyName = "Price";
+            this.Price.HeaderText = "Price";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            // 
+            // TotalItbis
+            // 
+            this.TotalItbis.DataPropertyName = "TotalItbis";
+            this.TotalItbis.HeaderText = "TotalItbis";
+            this.TotalItbis.Name = "TotalItbis";
+            this.TotalItbis.ReadOnly = true;
+            // 
+            // SubTotal
+            // 
+            this.SubTotal.DataPropertyName = "SubTotal";
+            this.SubTotal.HeaderText = "SubTotal";
+            this.SubTotal.Name = "SubTotal";
+            this.SubTotal.ReadOnly = true;
+            // 
+            // Total
+            // 
+            this.Total.DataPropertyName = "Total";
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            // 
+            // FormInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -395,7 +409,7 @@
             this.Controls.Add(this.groupBox5);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "FormInvoiceDetail";
+            this.Name = "FormInvoice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InvoiceDetail";
             this.Load += new System.EventHandler(this.DEPARTAMENTOS_Load);
@@ -432,6 +446,7 @@
         private System.Windows.Forms.TextBox txtprice;
         private System.Windows.Forms.TextBox txtQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn CustomerId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;

@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Label codDptoLabel;
+            System.Windows.Forms.Label txtid;
             System.Windows.Forms.Label descripcionLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCustomerType));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.codDptoTextBox = new System.Windows.Forms.TextBox();
+            this.txtidf = new System.Windows.Forms.TextBox();
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tbldepartamentoDataGridView = new System.Windows.Forms.DataGridView();
@@ -43,9 +43,9 @@
             this.bteditar = new System.Windows.Forms.Button();
             this.btagregar = new System.Windows.Forms.Button();
             this.btguardar = new System.Windows.Forms.Button();
-            this.CodDpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            codDptoLabel = new System.Windows.Forms.Label();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            txtid = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -53,14 +53,14 @@
             this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
-            // codDptoLabel
+            // txtid
             // 
-            codDptoLabel.AutoSize = true;
-            codDptoLabel.Location = new System.Drawing.Point(14, 22);
-            codDptoLabel.Name = "codDptoLabel";
-            codDptoLabel.Size = new System.Drawing.Size(55, 13);
-            codDptoLabel.TabIndex = 32;
-            codDptoLabel.Text = "Cod Dpto:";
+            txtid.AutoSize = true;
+            txtid.Location = new System.Drawing.Point(14, 22);
+            txtid.Name = "txtid";
+            txtid.Size = new System.Drawing.Size(19, 13);
+            txtid.TabIndex = 32;
+            txtid.Text = "Id:";
             // 
             // descripcionLabel
             // 
@@ -73,9 +73,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.codDptoTextBox);
+            this.groupBox1.Controls.Add(this.txtidf);
             this.groupBox1.Controls.Add(this.descripcionTextBox);
-            this.groupBox1.Controls.Add(codDptoLabel);
+            this.groupBox1.Controls.Add(txtid);
             this.groupBox1.Controls.Add(descripcionLabel);
             this.groupBox1.Location = new System.Drawing.Point(12, 98);
             this.groupBox1.Name = "groupBox1";
@@ -83,12 +83,12 @@
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             // 
-            // codDptoTextBox
+            // txtidf
             // 
-            this.codDptoTextBox.Location = new System.Drawing.Point(17, 38);
-            this.codDptoTextBox.Name = "codDptoTextBox";
-            this.codDptoTextBox.Size = new System.Drawing.Size(52, 20);
-            this.codDptoTextBox.TabIndex = 36;
+            this.txtidf.Location = new System.Drawing.Point(17, 38);
+            this.txtidf.Name = "txtidf";
+            this.txtidf.Size = new System.Drawing.Size(52, 20);
+            this.txtidf.TabIndex = 36;
             // 
             // descripcionTextBox
             // 
@@ -112,8 +112,8 @@
             this.tbldepartamentoDataGridView.AllowUserToDeleteRows = false;
             this.tbldepartamentoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tbldepartamentoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CodDpto,
-            this.Descripcion});
+            this.Id,
+            this.Description});
             this.tbldepartamentoDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbldepartamentoDataGridView.Location = new System.Drawing.Point(3, 16);
             this.tbldepartamentoDataGridView.Name = "tbldepartamentoDataGridView";
@@ -209,22 +209,22 @@
             this.btguardar.UseVisualStyleBackColor = true;
             this.btguardar.Click += new System.EventHandler(this.btguardar_Click);
             // 
-            // CodDpto
+            // Id
             // 
-            this.CodDpto.DataPropertyName = "Id";
-            this.CodDpto.FillWeight = 75F;
-            this.CodDpto.HeaderText = "Código";
-            this.CodDpto.Name = "CodDpto";
-            this.CodDpto.ReadOnly = true;
-            this.CodDpto.Width = 75;
+            this.Id.DataPropertyName = "Id";
+            this.Id.FillWeight = 75F;
+            this.Id.HeaderText = "Código";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 75;
             // 
-            // Descripcion
+            // Description
             // 
-            this.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Descripcion.DataPropertyName = "Description";
-            this.Descripcion.HeaderText = "Descipción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
+            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Description.DataPropertyName = "Description";
+            this.Description.HeaderText = "Descipción";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
             // 
             // FormCustomerType
             // 
@@ -267,9 +267,9 @@
         private System.Windows.Forms.DataGridView tbldepartamentoDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.TextBox codDptoTextBox;
+        private System.Windows.Forms.TextBox txtidf;
         private System.Windows.Forms.TextBox descripcionTextBox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CodDpto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
     }
 }

@@ -3,8 +3,6 @@ C:\Users\Dilone\Downloads\jwt-api-master\jwt-api-master\Schad\SCHAD_TULIO\obj\De
 C:\Users\Dilone\Downloads\jwt-api-master\jwt-api-master\Schad\SCHAD_TULIO\obj\Debug\SCHAD_TULIO.FrmBuscarServidor.resources
 C:\Users\Dilone\Downloads\jwt-api-master\jwt-api-master\Schad\SCHAD_TULIO\obj\Debug\SCHAD_TULIO.home.resources
 C:\Users\Dilone\Downloads\jwt-api-master\jwt-api-master\Schad\SCHAD_TULIO\obj\Debug\SCHAD_TULIO.loguin.resources
-C:\Users\Dilone\Downloads\jwt-api-master\jwt-api-master\Schad\SCHAD_TULIO\obj\Debug\SCHAD_TULIO.FormHome.resources
-C:\Users\Dilone\Downloads\jwt-api-master\jwt-api-master\Schad\SCHAD_TULIO\obj\Debug\SCHAD_TULIO.FormLogin.resources
 C:\Users\Dilone\Downloads\jwt-api-master\jwt-api-master\Schad\SCHAD_TULIO\obj\Debug\SCHAD_TULIO.Properties.Resources.resources
 C:\Users\Dilone\Downloads\jwt-api-master\jwt-api-master\Schad\SCHAD_TULIO\obj\Debug\SCHAD_TULIO.csproj.GenerateResource.cache
 C:\Users\Dilone\Downloads\jwt-api-master\jwt-api-master\Schad\SCHAD_TULIO\obj\Debug\SCHAD_TULIO.csproj.CoreCompileInputs.cache
@@ -29,3 +27,6 @@ C:\Users\tmercedes\Documents\GitHub\Schad\SCHAD_TULIO\bin\Debug\SCHAD_TULIO.exe.
 C:\Users\tmercedes\Documents\GitHub\Schad\SCHAD_TULIO\bin\Debug\SCHAD_TULIO.exe
 C:\Users\tmercedes\Documents\GitHub\Schad\SCHAD_TULIO\bin\Debug\SCHAD_TULIO.pdb
 C:\Users\tmercedes\Documents\GitHub\Schad\SCHAD_TULIO\obj\Debug\SCHAD_TULIO.FormInvoice.resources
+C:\Users\Dilone\Downloads\jwt-api-master\jwt-api-master\Schad\SCHAD_TULIO\obj\Debug\SCHAD_TULIO.FormInvoice.resources
+C:\Users\Dilone\Downloads\jwt-api-master\jwt-api-master\Schad\SCHAD_TULIO\obj\Debug\SCHAD_TULIO.FormCustomer.resources
+C:\Users\Dilone\Downloads\jwt-api-master\jwt-api-master\Schad\SCHAD_TULIO\obj\Debug\SCHAD_TULIO.FormCustomerType.resources

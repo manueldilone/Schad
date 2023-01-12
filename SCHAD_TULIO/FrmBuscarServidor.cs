@@ -96,8 +96,9 @@ namespace SCHAD_TULIO
                 String usuario;
                 String clave;
                 String autenticacionwindows;
-
+              
                 Ubicacion.ObtenerServidor(out servidor, out basededatos, out usuario, out clave, out autenticacionwindows);
+                VariablesGlobales.DBPRINCIPAL = basededatos+ "+.[dbo]+";
 
                 cmbservidor.Text = servidor;
                 cmbbasededatos.Text = basededatos;

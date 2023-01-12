@@ -52,14 +52,13 @@ namespace SCHAD_TULIO.ENTIDAD
                 while (reader.Read())
                 {
 
-                    settCodigo(reader.GetInt32(0));
+                    Id=reader.GetInt32(0);
 
                 }
-                return getCodigo();
+                return Id;
             }
         }
-        public int getCodigo() { return Id; }
-        public void settCodigo(int valor) { Id = valor; }
+      
 
 
 

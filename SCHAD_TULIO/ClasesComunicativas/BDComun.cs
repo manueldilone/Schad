@@ -200,7 +200,7 @@ namespace SCHAD_TULIO
                 cnSQL = new SqlConnection(this.pCnStr);
                 cnSQL.Open();
                 cmSQL = new SqlCommand(strSQL, cnSQL);
-
+          
 
                 cmSQL.ExecuteNonQuery();
                 cnSQL.Close();
@@ -232,9 +232,11 @@ namespace SCHAD_TULIO
                 String clave;
                 String autenticacionwindows;
 
+        
                 Ubicacion.ObtenerServidor(out servidor, out basededatos, out usuario, out clave, out autenticacionwindows);
 
-              
+                VariablesGlobales.DBPRINCIPAL = basededatos + ".[dbo]";
+
 
                 String separadordecimal = VariablesGlobales.miCultura.NumberFormat.NumberDecimalSeparator;
                 String separadorlista = VariablesGlobales.miCultura.TextInfo.ListSeparator;

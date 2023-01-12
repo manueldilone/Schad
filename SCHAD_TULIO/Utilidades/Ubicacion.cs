@@ -48,7 +48,7 @@ namespace SCHAD_TULIO
                     pautenticacionwindows = sr.ReadLine();
 
                     sr.Close();
-
+                  
                 }
             }
             catch (Exception ex)
