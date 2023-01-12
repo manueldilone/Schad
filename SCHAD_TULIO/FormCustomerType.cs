@@ -277,8 +277,8 @@ namespace SCHAD_TULIO
 
         private void tbldepartamentoDataGridView_Click(object sender, EventArgs e)
         {
-            codDptoTextBox.Text = Convert.ToString(tbldepartamentoDataGridView.CurrentRow.Cells["CodDpto"].Value);
-            descripcionTextBox.Text= (string) tbldepartamentoDataGridView.CurrentRow.Cells["Descripcion"].Value;
+            codDptoTextBox.Text = Convert.ToString(tbldepartamentoDataGridView.CurrentRow.Cells["Id"].Value);
+            descripcionTextBox.Text= (string) tbldepartamentoDataGridView.CurrentRow.Cells["Description"].Value;
         }
     }
 }

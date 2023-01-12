@@ -30,15 +30,23 @@
         {
             System.Windows.Forms.Label codDptoLabel;
             System.Windows.Forms.Label descripcionLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCustomer));
             System.Windows.Forms.Label label1;
+            System.Windows.Forms.Label label2;
+            System.Windows.Forms.Label label3;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCustomer));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.codDptoTextBox = new System.Windows.Forms.TextBox();
-            this.descripcionTextBox = new System.Windows.Forms.TextBox();
+            this.cmbcustomertype = new System.Windows.Forms.ComboBox();
+            this.ckstatus = new System.Windows.Forms.CheckBox();
+            this.txtAdress = new System.Windows.Forms.TextBox();
+            this.txtid = new System.Windows.Forms.TextBox();
+            this.txtname = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tbldepartamentoDataGridView = new System.Windows.Forms.DataGridView();
-            this.CodDpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Adress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerTypeid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btcancelar = new System.Windows.Forms.Button();
@@ -49,6 +57,8 @@
             codDptoLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbldepartamentoDataGridView)).BeginInit();
@@ -73,11 +83,43 @@
             descripcionLabel.TabIndex = 34;
             descripcionLabel.Text = "CustName:";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(14, 76);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(42, 13);
+            label1.TabIndex = 39;
+            label1.Text = "Adress:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(412, 22);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(59, 13);
+            label2.TabIndex = 41;
+            label2.Text = "CustName:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(773, 22);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(40, 13);
+            label3.TabIndex = 44;
+            label3.Text = "Status:";
+            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(label3);
+            this.groupBox1.Controls.Add(this.cmbcustomertype);
+            this.groupBox1.Controls.Add(this.ckstatus);
+            this.groupBox1.Controls.Add(label2);
+            this.groupBox1.Controls.Add(this.txtAdress);
             this.groupBox1.Controls.Add(label1);
-            this.groupBox1.Controls.Add(this.codDptoTextBox);
-            this.groupBox1.Controls.Add(this.descripcionTextBox);
+            this.groupBox1.Controls.Add(this.txtid);
+            this.groupBox1.Controls.Add(this.txtname);
             this.groupBox1.Controls.Add(codDptoLabel);
             this.groupBox1.Controls.Add(descripcionLabel);
             this.groupBox1.Location = new System.Drawing.Point(12, 98);
@@ -86,26 +128,50 @@
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             // 
-            // codDptoTextBox
+            // cmbcustomertype
             // 
-            this.codDptoTextBox.Location = new System.Drawing.Point(17, 38);
-            this.codDptoTextBox.Name = "codDptoTextBox";
-            this.codDptoTextBox.Size = new System.Drawing.Size(52, 20);
-            this.codDptoTextBox.TabIndex = 36;
+            this.cmbcustomertype.FormattingEnabled = true;
+            this.cmbcustomertype.Location = new System.Drawing.Point(405, 38);
+            this.cmbcustomertype.Name = "cmbcustomertype";
+            this.cmbcustomertype.Size = new System.Drawing.Size(329, 21);
+            this.cmbcustomertype.TabIndex = 43;
             // 
-            // descripcionTextBox
+            // ckstatus
             // 
-            this.descripcionTextBox.Location = new System.Drawing.Point(75, 38);
-            this.descripcionTextBox.Name = "descripcionTextBox";
-            this.descripcionTextBox.Size = new System.Drawing.Size(324, 20);
-            this.descripcionTextBox.TabIndex = 38;
+            this.ckstatus.AutoSize = true;
+            this.ckstatus.Location = new System.Drawing.Point(785, 41);
+            this.ckstatus.Name = "ckstatus";
+            this.ckstatus.Size = new System.Drawing.Size(15, 14);
+            this.ckstatus.TabIndex = 42;
+            this.ckstatus.UseVisualStyleBackColor = true;
+            // 
+            // txtAdress
+            // 
+            this.txtAdress.Location = new System.Drawing.Point(17, 92);
+            this.txtAdress.Name = "txtAdress";
+            this.txtAdress.Size = new System.Drawing.Size(846, 20);
+            this.txtAdress.TabIndex = 40;
+            // 
+            // txtid
+            // 
+            this.txtid.Location = new System.Drawing.Point(17, 38);
+            this.txtid.Name = "txtid";
+            this.txtid.Size = new System.Drawing.Size(52, 20);
+            this.txtid.TabIndex = 36;
+            // 
+            // txtname
+            // 
+            this.txtname.Location = new System.Drawing.Point(75, 38);
+            this.txtname.Name = "txtname";
+            this.txtname.Size = new System.Drawing.Size(324, 20);
+            this.txtname.TabIndex = 38;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.tbldepartamentoDataGridView);
-            this.groupBox2.Location = new System.Drawing.Point(298, 222);
+            this.groupBox2.Location = new System.Drawing.Point(12, 222);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(672, 391);
+            this.groupBox2.Size = new System.Drawing.Size(869, 391);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
             // 
@@ -115,33 +181,59 @@
             this.tbldepartamentoDataGridView.AllowUserToDeleteRows = false;
             this.tbldepartamentoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tbldepartamentoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CodDpto,
-            this.Descripcion});
+            this.Id,
+            this.CustName,
+            this.Adress,
+            this.Status,
+            this.CustomerTypeid});
             this.tbldepartamentoDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbldepartamentoDataGridView.Location = new System.Drawing.Point(3, 16);
             this.tbldepartamentoDataGridView.Name = "tbldepartamentoDataGridView";
             this.tbldepartamentoDataGridView.ReadOnly = true;
             this.tbldepartamentoDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tbldepartamentoDataGridView.Size = new System.Drawing.Size(666, 372);
+            this.tbldepartamentoDataGridView.Size = new System.Drawing.Size(863, 372);
             this.tbldepartamentoDataGridView.TabIndex = 32;
+            this.tbldepartamentoDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.tbldepartamentoDataGridView_CellFormatting);
             this.tbldepartamentoDataGridView.Click += new System.EventHandler(this.tbldepartamentoDataGridView_Click);
             // 
-            // CodDpto
+            // Id
             // 
-            this.CodDpto.DataPropertyName = "CodDpto";
-            this.CodDpto.FillWeight = 75F;
-            this.CodDpto.HeaderText = "Código";
-            this.CodDpto.Name = "CodDpto";
-            this.CodDpto.ReadOnly = true;
-            this.CodDpto.Width = 75;
+            this.Id.DataPropertyName = "Id";
+            this.Id.FillWeight = 75F;
+            this.Id.HeaderText = "Código";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 75;
             // 
-            // Descripcion
+            // CustName
             // 
-            this.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Descripcion.DataPropertyName = "Descripcion";
-            this.Descripcion.HeaderText = "Descipción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
+            this.CustName.DataPropertyName = "CustName";
+            this.CustName.HeaderText = "Nombre";
+            this.CustName.Name = "CustName";
+            this.CustName.ReadOnly = true;
+            // 
+            // Adress
+            // 
+            this.Adress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Adress.DataPropertyName = "Adress";
+            this.Adress.HeaderText = "Direccion";
+            this.Adress.Name = "Adress";
+            this.Adress.ReadOnly = true;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            // 
+            // CustomerTypeid
+            // 
+            this.CustomerTypeid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CustomerTypeid.DataPropertyName = "CustomerTypeId";
+            this.CustomerTypeid.HeaderText = "CustomerType";
+            this.CustomerTypeid.Name = "CustomerTypeid";
+            this.CustomerTypeid.ReadOnly = true;
             // 
             // groupBox5
             // 
@@ -153,7 +245,7 @@
             this.groupBox5.Controls.Add(this.btguardar);
             this.groupBox5.Location = new System.Drawing.Point(12, 10);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(669, 82);
+            this.groupBox5.Size = new System.Drawing.Size(869, 82);
             this.groupBox5.TabIndex = 29;
             this.groupBox5.TabStop = false;
             // 
@@ -184,7 +276,7 @@
             // btsalir
             // 
             this.btsalir.Image = ((System.Drawing.Image)(resources.GetObject("btsalir.Image")));
-            this.btsalir.Location = new System.Drawing.Point(530, 19);
+            this.btsalir.Location = new System.Drawing.Point(776, 19);
             this.btsalir.Name = "btsalir";
             this.btsalir.Size = new System.Drawing.Size(87, 57);
             this.btsalir.TabIndex = 5;
@@ -229,22 +321,13 @@
             this.btguardar.UseVisualStyleBackColor = true;
             this.btguardar.Click += new System.EventHandler(this.btguardar_Click);
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(434, 22);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(42, 13);
-            label1.TabIndex = 39;
-            label1.Text = "Adress:";
-            // 
             // FormCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SCHAD_TULIO.Properties.Resources.chrome_bottom_left;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1004, 586);
+            this.ClientSize = new System.Drawing.Size(893, 586);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox5);
@@ -252,7 +335,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Customer Type";
+            this.Text = "Customer";
             this.Load += new System.EventHandler(this.DEPARTAMENTOS_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -279,9 +362,15 @@
         private System.Windows.Forms.DataGridView tbldepartamentoDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.TextBox codDptoTextBox;
-        private System.Windows.Forms.TextBox descripcionTextBox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CodDpto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.TextBox txtid;
+        private System.Windows.Forms.TextBox txtname;
+        private System.Windows.Forms.TextBox txtAdress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CustName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Adress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CustomerTypeid;
+        private System.Windows.Forms.ComboBox cmbcustomertype;
+        private System.Windows.Forms.CheckBox ckstatus;
     }
 }

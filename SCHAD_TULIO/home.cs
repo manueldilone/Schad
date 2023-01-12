@@ -86,7 +86,22 @@ namespace SCHAD_TULIO
 
         private void button11_Click(object sender, EventArgs e)
         {
+            FormCustomer customer = new FormCustomer();
+            customer.ShowDialog();
 
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            FormCustomerType type = new FormCustomerType();
+            type.ShowDialog();
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            FormInvoice formInvoice = new FormInvoice();
+            formInvoice.ShowDialog();
         }
     }
 }

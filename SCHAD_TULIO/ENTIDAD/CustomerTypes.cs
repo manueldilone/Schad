@@ -7,18 +7,29 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization;
+using System.IO;
 
 namespace SCHAD_TULIO.ENTIDAD
 {
-    internal class CustomerTypes
+
+    public class CustomerTypes
     {
-        int codigo;
+       
+        public int Id { get; set; }
+
+        public string Description { get; set; }
+
+
+
+
+
         public DataTable ObtenerCustomerTypes(int Id)
         {
 
             BDComun d = new BDComun();
             //return d.DatosTabla (
-            return d.DatosTabla("SELECT Id, Description FROM " + VariablesGlobales.DBPRINCIPAL  + ".CustomerTypes where CodDpto=" + codigo);
+            return d.DatosTabla("SELECT Id, Description FROM " + VariablesGlobales.DBPRINCIPAL  + ".CustomerTypes where Id=" + Id);
         }
 
         public DataTable ObtenertodosCustomerTypes()
@@ -47,22 +58,22 @@ namespace SCHAD_TULIO.ENTIDAD
                 return getCodigo();
             }
         }
-        public int getCodigo() { return codigo; }
-        public void settCodigo(int valor) { codigo = valor; }
+        public int getCodigo() { return Id; }
+        public void settCodigo(int valor) { Id = valor; }
 
 
 
         public void InsertQuery(string Description)
         {
             BDComun d = new BDComun();
-            String strSQL = "insert into " + VariablesGlobales.DBPRINCIPAL + VariablesGlobales.Año + ".CustomerTypes(Description) values('" + Description + "')";
+            String strSQL = "insert into " + VariablesGlobales.DBPRINCIPAL + ".CustomerTypes(Description) values('" + Description + "')";
             d.ActualizarTabla(strSQL);
 
         }
         public void UpdateQuery(int Id, string Description)
         {
             BDComun d = new BDComun();
-            String strSQL = "update " + VariablesGlobales.DBPRINCIPAL + VariablesGlobales.Año + ".CustomerTypes set Description='" + Description + "' where Id=" + Id + "";
+            String strSQL = "update " + VariablesGlobales.DBPRINCIPAL + ".CustomerTypes set Description='" + Description + "' where Id=" + Id + "";
             d.ActualizarTabla(strSQL);
 
         }
@@ -70,7 +81,7 @@ namespace SCHAD_TULIO.ENTIDAD
         public void DeleteQuery(int Id)
         {
             BDComun d = new BDComun();
-            String strSQL = "delete from " + VariablesGlobales.DBPRINCIPAL + VariablesGlobales.Año + ".CustomerTypes where Id=" + Id + "";
+            String strSQL = "delete from " + VariablesGlobales.DBPRINCIPAL + ".CustomerTypes where Id=" + Id + "";
             d.ActualizarTabla(strSQL);
 
         }
@@ -80,11 +91,23 @@ namespace SCHAD_TULIO.ENTIDAD
 
             BDComun d = new BDComun();
 
-            string query = "SELECT Id FROM " + VariablesGlobales.DBPRINCIPAL + VariablesGlobales.Año + ".CustomerTypes where Description='" + Description + "'";
+            string query = "SELECT Id FROM " + VariablesGlobales.DBPRINCIPAL +  ".CustomerTypes where Description='" + Description + "'";
             DataRow drSQL = d.RegistroTabla(query);
 
 
             return Int32.Parse(drSQL["Id"].ToString()); ;
+        }
+
+        public string getDescription(int Id)
+        {
+
+            BDComun d = new BDComun();
+
+            string query = "SELECT Description FROM " + VariablesGlobales.DBPRINCIPAL + ".CustomerTypes where Id='" + Id + "'";
+            DataRow drSQL = d.RegistroTabla(query);
+
+
+            return drSQL["Description"].ToString(); 
         }
 
     }

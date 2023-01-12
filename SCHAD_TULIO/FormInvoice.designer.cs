@@ -1,6 +1,6 @@
 ﻿namespace SCHAD_TULIO
 {
-    partial class FormCustomerType
+    partial class FormInvoice
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,29 @@
         {
             System.Windows.Forms.Label codDptoLabel;
             System.Windows.Forms.Label descripcionLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCustomerType));
+            System.Windows.Forms.Label label2;
+            System.Windows.Forms.Label label3;
+            System.Windows.Forms.Label label4;
+            System.Windows.Forms.Label label5;
+            System.Windows.Forms.Label label6;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInvoice));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.codDptoTextBox = new System.Windows.Forms.TextBox();
-            this.descripcionTextBox = new System.Windows.Forms.TextBox();
+            this.txttotal = new System.Windows.Forms.TextBox();
+            this.txtsubtotal = new System.Windows.Forms.TextBox();
+            this.txtitbis = new System.Windows.Forms.TextBox();
+            this.txtprice = new System.Windows.Forms.TextBox();
+            this.txtQty = new System.Windows.Forms.TextBox();
+            this.cmbcustomer = new System.Windows.Forms.ComboBox();
+            this.txtid = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tbldepartamentoDataGridView = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalItbis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btcancelar = new System.Windows.Forms.Button();
@@ -43,10 +60,13 @@
             this.bteditar = new System.Windows.Forms.Button();
             this.btagregar = new System.Windows.Forms.Button();
             this.btguardar = new System.Windows.Forms.Button();
-            this.CodDpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             codDptoLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
+            label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbldepartamentoDataGridView)).BeginInit();
@@ -58,51 +78,148 @@
             codDptoLabel.AutoSize = true;
             codDptoLabel.Location = new System.Drawing.Point(14, 22);
             codDptoLabel.Name = "codDptoLabel";
-            codDptoLabel.Size = new System.Drawing.Size(55, 13);
+            codDptoLabel.Size = new System.Drawing.Size(19, 13);
             codDptoLabel.TabIndex = 32;
-            codDptoLabel.Text = "Cod Dpto:";
+            codDptoLabel.Text = "Id:";
             // 
             // descripcionLabel
             // 
             descripcionLabel.AutoSize = true;
             descripcionLabel.Location = new System.Drawing.Point(79, 22);
             descripcionLabel.Name = "descripcionLabel";
-            descripcionLabel.Size = new System.Drawing.Size(66, 13);
+            descripcionLabel.Size = new System.Drawing.Size(54, 13);
             descripcionLabel.TabIndex = 34;
-            descripcionLabel.Text = "Descripcion:";
+            descripcionLabel.Text = "Customer:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(392, 22);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(26, 13);
+            label2.TabIndex = 41;
+            label2.Text = "Qty:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(498, 22);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(34, 13);
+            label3.TabIndex = 50;
+            label3.Text = "Price:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(585, 22);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(53, 13);
+            label4.TabIndex = 51;
+            label4.Text = "TotalItbis:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(679, 22);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(53, 13);
+            label5.TabIndex = 52;
+            label5.Text = "SubTotal:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new System.Drawing.Point(773, 22);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(34, 13);
+            label6.TabIndex = 53;
+            label6.Text = "Total:";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.codDptoTextBox);
-            this.groupBox1.Controls.Add(this.descripcionTextBox);
+            this.groupBox1.Controls.Add(label6);
+            this.groupBox1.Controls.Add(label5);
+            this.groupBox1.Controls.Add(label4);
+            this.groupBox1.Controls.Add(label3);
+            this.groupBox1.Controls.Add(this.txttotal);
+            this.groupBox1.Controls.Add(this.txtsubtotal);
+            this.groupBox1.Controls.Add(this.txtitbis);
+            this.groupBox1.Controls.Add(this.txtprice);
+            this.groupBox1.Controls.Add(this.txtQty);
+            this.groupBox1.Controls.Add(this.cmbcustomer);
+            this.groupBox1.Controls.Add(label2);
+            this.groupBox1.Controls.Add(this.txtid);
             this.groupBox1.Controls.Add(codDptoLabel);
             this.groupBox1.Controls.Add(descripcionLabel);
             this.groupBox1.Location = new System.Drawing.Point(12, 98);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(669, 71);
+            this.groupBox1.Size = new System.Drawing.Size(869, 82);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             // 
-            // codDptoTextBox
+            // txttotal
             // 
-            this.codDptoTextBox.Location = new System.Drawing.Point(17, 38);
-            this.codDptoTextBox.Name = "codDptoTextBox";
-            this.codDptoTextBox.Size = new System.Drawing.Size(52, 20);
-            this.codDptoTextBox.TabIndex = 36;
+            this.txttotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.txttotal.Location = new System.Drawing.Point(747, 38);
+            this.txttotal.Name = "txttotal";
+            this.txttotal.ReadOnly = true;
+            this.txttotal.Size = new System.Drawing.Size(86, 20);
+            this.txttotal.TabIndex = 49;
             // 
-            // descripcionTextBox
+            // txtsubtotal
             // 
-            this.descripcionTextBox.Location = new System.Drawing.Point(75, 38);
-            this.descripcionTextBox.Name = "descripcionTextBox";
-            this.descripcionTextBox.Size = new System.Drawing.Size(588, 20);
-            this.descripcionTextBox.TabIndex = 38;
+            this.txtsubtotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.txtsubtotal.Location = new System.Drawing.Point(655, 38);
+            this.txtsubtotal.Name = "txtsubtotal";
+            this.txtsubtotal.ReadOnly = true;
+            this.txtsubtotal.Size = new System.Drawing.Size(86, 20);
+            this.txtsubtotal.TabIndex = 48;
+            // 
+            // txtitbis
+            // 
+            this.txtitbis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.txtitbis.Location = new System.Drawing.Point(563, 38);
+            this.txtitbis.Name = "txtitbis";
+            this.txtitbis.ReadOnly = true;
+            this.txtitbis.Size = new System.Drawing.Size(86, 20);
+            this.txtitbis.TabIndex = 47;
+            // 
+            // txtprice
+            // 
+            this.txtprice.Location = new System.Drawing.Point(471, 38);
+            this.txtprice.Name = "txtprice";
+            this.txtprice.Size = new System.Drawing.Size(86, 20);
+            this.txtprice.TabIndex = 46;
+            // 
+            // txtQty
+            // 
+            this.txtQty.Location = new System.Drawing.Point(379, 38);
+            this.txtQty.Name = "txtQty";
+            this.txtQty.Size = new System.Drawing.Size(86, 20);
+            this.txtQty.TabIndex = 45;
+            // 
+            // cmbcustomer
+            // 
+            this.cmbcustomer.FormattingEnabled = true;
+            this.cmbcustomer.Location = new System.Drawing.Point(75, 38);
+            this.cmbcustomer.Name = "cmbcustomer";
+            this.cmbcustomer.Size = new System.Drawing.Size(298, 21);
+            this.cmbcustomer.TabIndex = 43;
+            // 
+            // txtid
+            // 
+            this.txtid.Location = new System.Drawing.Point(17, 38);
+            this.txtid.Name = "txtid";
+            this.txtid.Size = new System.Drawing.Size(52, 20);
+            this.txtid.TabIndex = 36;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.tbldepartamentoDataGridView);
-            this.groupBox2.Location = new System.Drawing.Point(12, 175);
+            this.groupBox2.Location = new System.Drawing.Point(12, 186);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(672, 391);
+            this.groupBox2.Size = new System.Drawing.Size(869, 388);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
             // 
@@ -112,16 +229,73 @@
             this.tbldepartamentoDataGridView.AllowUserToDeleteRows = false;
             this.tbldepartamentoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tbldepartamentoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CodDpto,
-            this.Descripcion});
+            this.Id,
+            this.CustomerId,
+            this.Qty,
+            this.Price,
+            this.TotalItbis,
+            this.SubTotal,
+            this.Total});
             this.tbldepartamentoDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbldepartamentoDataGridView.Location = new System.Drawing.Point(3, 16);
             this.tbldepartamentoDataGridView.Name = "tbldepartamentoDataGridView";
             this.tbldepartamentoDataGridView.ReadOnly = true;
             this.tbldepartamentoDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tbldepartamentoDataGridView.Size = new System.Drawing.Size(666, 372);
+            this.tbldepartamentoDataGridView.Size = new System.Drawing.Size(863, 369);
             this.tbldepartamentoDataGridView.TabIndex = 32;
             this.tbldepartamentoDataGridView.Click += new System.EventHandler(this.tbldepartamentoDataGridView_Click);
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.FillWeight = 75F;
+            this.Id.HeaderText = "Código";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 75;
+            // 
+            // CustomerId
+            // 
+            this.CustomerId.DataPropertyName = "CustomerId";
+            this.CustomerId.HeaderText = "Customer";
+            this.CustomerId.Name = "CustomerId";
+            this.CustomerId.ReadOnly = true;
+            // 
+            // Qty
+            // 
+            this.Qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Qty.DataPropertyName = "Qty";
+            this.Qty.HeaderText = "Qty";
+            this.Qty.Name = "Qty";
+            this.Qty.ReadOnly = true;
+            // 
+            // Price
+            // 
+            this.Price.DataPropertyName = "Price";
+            this.Price.HeaderText = "Price";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            // 
+            // TotalItbis
+            // 
+            this.TotalItbis.DataPropertyName = "TotalItbis";
+            this.TotalItbis.HeaderText = "TotalItbis";
+            this.TotalItbis.Name = "TotalItbis";
+            this.TotalItbis.ReadOnly = true;
+            // 
+            // SubTotal
+            // 
+            this.SubTotal.DataPropertyName = "SubTotal";
+            this.SubTotal.HeaderText = "SubTotal";
+            this.SubTotal.Name = "SubTotal";
+            this.SubTotal.ReadOnly = true;
+            // 
+            // Total
+            // 
+            this.Total.DataPropertyName = "Total";
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
             // 
             // groupBox5
             // 
@@ -133,7 +307,7 @@
             this.groupBox5.Controls.Add(this.btguardar);
             this.groupBox5.Location = new System.Drawing.Point(12, 10);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(669, 82);
+            this.groupBox5.Size = new System.Drawing.Size(869, 82);
             this.groupBox5.TabIndex = 29;
             this.groupBox5.TabStop = false;
             // 
@@ -164,7 +338,7 @@
             // btsalir
             // 
             this.btsalir.Image = ((System.Drawing.Image)(resources.GetObject("btsalir.Image")));
-            this.btsalir.Location = new System.Drawing.Point(530, 19);
+            this.btsalir.Location = new System.Drawing.Point(776, 19);
             this.btsalir.Name = "btsalir";
             this.btsalir.Size = new System.Drawing.Size(87, 57);
             this.btsalir.TabIndex = 5;
@@ -209,38 +383,21 @@
             this.btguardar.UseVisualStyleBackColor = true;
             this.btguardar.Click += new System.EventHandler(this.btguardar_Click);
             // 
-            // CodDpto
-            // 
-            this.CodDpto.DataPropertyName = "Id";
-            this.CodDpto.FillWeight = 75F;
-            this.CodDpto.HeaderText = "Código";
-            this.CodDpto.Name = "CodDpto";
-            this.CodDpto.ReadOnly = true;
-            this.CodDpto.Width = 75;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Descripcion.DataPropertyName = "Description";
-            this.Descripcion.HeaderText = "Descipción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            // 
-            // FormCustomerType
+            // FormInvoiceDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SCHAD_TULIO.Properties.Resources.chrome_bottom_left;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(703, 586);
+            this.ClientSize = new System.Drawing.Size(893, 586);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox5);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "FormCustomerType";
+            this.Name = "FormInvoiceDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Customer Type";
+            this.Text = "InvoiceDetail";
             this.Load += new System.EventHandler(this.DEPARTAMENTOS_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -267,9 +424,19 @@
         private System.Windows.Forms.DataGridView tbldepartamentoDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.TextBox codDptoTextBox;
-        private System.Windows.Forms.TextBox descripcionTextBox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CodDpto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.TextBox txtid;
+        private System.Windows.Forms.ComboBox cmbcustomer;
+        private System.Windows.Forms.TextBox txttotal;
+        private System.Windows.Forms.TextBox txtsubtotal;
+        private System.Windows.Forms.TextBox txtitbis;
+        private System.Windows.Forms.TextBox txtprice;
+        private System.Windows.Forms.TextBox txtQty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CustomerId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalItbis;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
     }
 }

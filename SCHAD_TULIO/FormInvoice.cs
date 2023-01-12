@@ -13,47 +13,63 @@ using System.Windows.Forms;
 
 namespace SCHAD_TULIO
 {
-    public partial class FormCustomer : Form
+    public partial class FormInvoice : Form
     {
-        
+
         int operacion = 0;
-        ENTIDAD.Customers Customers = new ENTIDAD.Customers();
-        public FormCustomer()
+        ENTIDAD.Invoice nvoice = new ENTIDAD.Invoice();
+
+
+        public FormInvoice()
         {
             InitializeComponent();
-          
+
         }
 
         private void clienteProgramaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-           
+
         }
 
-        public void actualizar()
+        private void DEPARTAMENTOS_Load(object sender, EventArgs e)
         {
-            tbldepartamentoDataGridView.DataSource = Customers.ObtenerTodosCustomer();
+            DoubleBuffered = true;
+
+            try
+            {
+                miestilo estilo = new miestilo();
+                estilo.DataGrid(tbldepartamentoDataGridView);
+
+                this.Text = this.Text + VariablesGlobales.sistema;
+
+                actualizargrid();
+
+
+                ActivarControles(false);
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Precaución. " + ex.Message, "Sistemas Administrativos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+            }
         }
 
         public void ActivarControles(Boolean valor)
         {
+            cmbcustomer.Enabled = valor;
             txtid.Enabled = valor;
-
-            txtname.Enabled = valor;
+            txtitbis.Enabled = valor;
+            txtQty.Enabled = valor;
+            txtprice.Enabled = valor;
+            txtsubtotal.Enabled = valor;
+            txttotal.Enabled = valor;
             btcancelar.Enabled = valor;
             btguardar.Enabled = valor;
-
-            txtname.Enabled = valor;
-            txtid.Enabled = valor;
-
-
-
-            txtAdress.Enabled = valor;
-            ckstatus.Enabled = valor;
-            cmbcustomertype.Enabled = valor;
-
-
-
-            if (valor == false)
+            if (valor.Equals(false))
             {
                 button2.Enabled = true;
                 btagregar.Enabled = true;
@@ -66,91 +82,54 @@ namespace SCHAD_TULIO
                 bteditar.Enabled = false;
             }
 
-            }
 
+
+        }
         public void limpiarcampos()
         {
-            txtname.Text = "";
+            cmbcustomer.Text = "";
             txtid.Text = "";
+            txtitbis.Text = "";
+            txtQty.Text = "";
+            txtprice.Text = "";
+            txtsubtotal.Text = "";
+            txttotal.Text = "";
 
 
-            
-                txtAdress.Text = "";
-            ckstatus.Checked = true;
-            cmbcustomertype.Text = "";
         }
-
-        private void DEPARTAMENTOS_Load(object sender, EventArgs e)
-        {
-            DoubleBuffered = true;
-
-            try
-            {
-                this.Text = this.Text + VariablesGlobales.sistema;
-
-                actualizar();
-
-
-                miestilo estilo = new miestilo();
-                estilo.DataGrid (tbldepartamentoDataGridView);
-
-                ActivarControles(false);
-
-
-
-
-
-
-
-
-
-
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Precaución. " + ex.Message, "Sistemas Administrativos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-
-            }
-        }
-
-      
-
         private void btagregar_Click(object sender, EventArgs e)
         {
             try
             {
                 operacion = 1;
-
+                //  codDptoTextBox.Enabled = false;
 
                 ActivarControles(true);
 
-
                 limpiarcampos();
 
+                Customers Customers = new Customers();
+                this.cmbcustomer.DataSource = Customers.ObtenerTodosCustomer();//Tipo DataTable
+                this.cmbcustomer.DisplayMember = "CustName";
+                this.cmbcustomer.ValueMember = "Id";
+
+
+                txtid.Text = Convert.ToString(nvoice.obteneridsiguiente());
 
 
 
 
-                txtid.Text = Convert.ToString(Customers.obteneridsiguiente());
-               
-               
+
             }
             catch (Exception ex)
             {
-
-
                 ActivarControles(false);
 
-                
-             
                 MessageBox.Show("Precaución. " + ex.Message, "Sistemas Administrativos", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
             }
-        
+
         }
 
         private void clienteProgramaDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -166,24 +145,23 @@ namespace SCHAD_TULIO
                 {
 
 
-                    Customers.InsertQuery (txtname.Text,txtAdress.Text,ckstatus.Checked ? 1: 0, Convert.ToInt32(cmbcustomertype.SelectedValue));
-
+                    nvoice.InsertQuery(Convert.ToInt32(txtid.Text),Convert.ToInt32(cmbcustomer.SelectedValue), Convert.ToInt32(txtQty.Text), Convert.ToDouble(txtprice.Text), Convert.ToDouble(txtitbis.Text), Convert.ToDouble(txtsubtotal.Text), Convert.ToDouble(txttotal.Text));
 
                     MessageBox.Show("Registro Agregado");
-                    
+
 
                 }
                 if (operacion == 2)
                 {
-                    Customers.UpdateQuery(Convert.ToInt32(txtid.Text), txtname.Text, txtAdress.Text, ckstatus.Checked ? 1 : 0, Convert.ToInt32(cmbcustomertype.SelectedValue));
+                    nvoice.UpdateQuery(Convert.ToInt32(txtid.Text),Convert.ToInt32(txtid.Text), Convert.ToInt32(cmbcustomer.SelectedValue), Convert.ToInt32(txtQty.Text), Convert.ToDouble(txtprice.Text), Convert.ToDouble(txtitbis.Text), Convert.ToDouble(txtsubtotal.Text), Convert.ToDouble(txttotal.Text));
 
-                    MessageBox.Show("Registro Modificado"); 
+                    MessageBox.Show("Registro Modificado");
                 }
 
                 ActivarControles(false);
 
 
-                actualizar();
+                actualizargrid();
 
             }
             catch (Exception ex)
@@ -196,11 +174,11 @@ namespace SCHAD_TULIO
             }
         }
 
-       
+
         private void bteditar_Click(object sender, EventArgs e)
         {
-            try { 
-            operacion = 2;
+            try {
+                operacion = 2;
 
 
                 ActivarControles(true);
@@ -218,13 +196,13 @@ namespace SCHAD_TULIO
 
 
             }
-}
+        }
 
-     
+
         private void btsalir_Click(object sender, EventArgs e)
         {
             this.Close();
-           
+
         }
 
         private void btcancelar_Click(object sender, EventArgs e)
@@ -232,7 +210,6 @@ namespace SCHAD_TULIO
             try
             {
                 operacion = 0;
-
                 ActivarControles(false);
 
 
@@ -246,7 +223,11 @@ namespace SCHAD_TULIO
 
             }
         }
-
+        public void actualizargrid ()
+        {
+            InvoiceDetail invoiceD = new InvoiceDetail();
+            tbldepartamentoDataGridView.DataSource = invoiceD.ObtenerTodosRegistro();
+        }
         private void button2_Click(object sender, EventArgs e)
         {
               try
@@ -255,12 +236,12 @@ namespace SCHAD_TULIO
                    "Borrarando Registro", MessageBoxButtons.YesNo);
                 if (Dialogo == DialogResult.Yes)
                 {
-                    Customers.DeleteQuery(Convert.ToInt32(txtid.Text));
+                   // InvoiceDetail.DeleteQuery(Convert.ToInt32(txtid.Text));
 
                     MessageBox.Show("Registro Eliminado Correctamente", "", MessageBoxButtons.OK,
                           MessageBoxIcon.Information);
 
-                    actualizar();
+                    actualizargrid();
 
                 }
                 if (Dialogo == DialogResult.No)
@@ -276,19 +257,19 @@ namespace SCHAD_TULIO
 
         private void tbldepartamentoDataGridView_Click(object sender, EventArgs e)
         {
-            CustomerTypes CustomerTypes = new CustomerTypes();
             txtid.Text = Convert.ToString(tbldepartamentoDataGridView.CurrentRow.Cells["Id"].Value);
-            txtname.Text= (string) tbldepartamentoDataGridView.CurrentRow.Cells["CustName"].Value;
-            txtAdress.Text = (string)tbldepartamentoDataGridView.CurrentRow.Cells["Adress"].Value;
-            ckstatus.Checked = (Boolean) tbldepartamentoDataGridView.CurrentRow.Cells["Status"].Value;
-            
-            
-            cmbcustomertype.Text = CustomerTypes.getDescription(Convert.ToInt32(tbldepartamentoDataGridView.CurrentRow.Cells["CustomerTypeId"].Value));
-        }
+            cmbcustomer.SelectedValue = Convert.ToInt32(tbldepartamentoDataGridView.CurrentRow.Cells["CustomerId"].Value);
+            txtitbis.Text = Convert.ToString(tbldepartamentoDataGridView.CurrentRow.Cells["Qty"].Value);
+            txtQty.Text = Convert.ToString(tbldepartamentoDataGridView.CurrentRow.Cells["Price"].Value);
+            txtprice.Text = Convert.ToString(tbldepartamentoDataGridView.CurrentRow.Cells["TotalItbis"].Value);
+            txtsubtotal.Text = Convert.ToString(tbldepartamentoDataGridView.CurrentRow.Cells["SubTotal"].Value);
+            txttotal.Text = Convert.ToString(tbldepartamentoDataGridView.CurrentRow.Cells["Total"].Value);
 
-        private void tbldepartamentoDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
 
+
+
+
+            
         }
     }
 }

@@ -12,9 +12,8 @@ namespace SCHAD_TULIO
         static string Glo_sistema = " - [Schad] - Sistema de Prueba Tecnica a Tulio Mercedes ";
 
         static string Glo_dbprincipal = "";
-        static int Glo_Ejercicio = 0;
-        static int Glo_Mes = 0;
-        static int Glo_Año = 0;
+    
+       
         static string Glo_Usuario = "";
         static int Glo_CantidadRegistroPagina = 100;
       
@@ -23,23 +22,9 @@ namespace SCHAD_TULIO
 
         public static String sistema { get { return Glo_sistema; } }
        
-        public static int Ejercicio
-        {
-            get { return Glo_Ejercicio; }
-            set { Glo_Ejercicio = value; }
-        }
-        public static int Mes
-        {
-            get { return Glo_Mes; }
-            set { Glo_Mes = value; }
-        }
-
+       
         public static String DBPRINCIPAL { get { return Glo_dbprincipal; } set { Glo_dbprincipal = value; } }
-        public static int Año
-        {
-            get { return Glo_Año; }
-            set { Glo_Año = value; }
-        }
+       
         public static string Usuario
         {
             get { return Glo_Usuario; }
