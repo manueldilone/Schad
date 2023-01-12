@@ -40,9 +40,9 @@ namespace SCHAD_TULIO
             }
             else
             {
-              ENTIDAD.tblmnu_usuarios usu   = new ENTIDAD.tblmnu_usuarios();
+              Usuarios usu   = new Usuarios();
                
-                if (usu.equals(cmbusuarios.Text, txt2.Text) ==true)
+                if (usu.ClaveCorrecta(cmbusuarios.Text, txt2.Text) ==true)
                 {
 
 
@@ -69,8 +69,8 @@ namespace SCHAD_TULIO
 
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-               ENTIDAD.tblmnu_usuarios usu = new ENTIDAD.tblmnu_usuarios();
-                if (usu.equals(cmbusuarios.Text, txt2.Text) ==true)
+                Usuarios usu = new Usuarios();
+                if (usu.ClaveCorrecta(cmbusuarios.Text, txt2.Text) ==true)
                 {
                     Validaryentrar();
                 }
@@ -95,14 +95,14 @@ namespace SCHAD_TULIO
                     a.conexionTest();
                         
                 }
+
+
+
+
+
                
 
-
-
-               
-
-
-                ENTIDAD.tblmnu_usuarios usu             = new ENTIDAD.tblmnu_usuarios();
+                Usuarios usu             = new Usuarios();
                 this.cmbusuarios.DataSource             = usu.ObtenerTodos();//Tipo DataTable
                 this.cmbusuarios.DisplayMember          = "Nombre";
                 this.cmbusuarios.ValueMember            = "Usuario";

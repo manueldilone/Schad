@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{6EDF8DAE-F663-4A37-8ABE-8BB586EF23F7}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>SCHAD_TULIO</RootNamespace>
     <AssemblyName>SCHAD_TULIO</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -47,12 +47,31 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>editar01.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClasesComunicativas\BDComun.cs" />
-    <Compile Include="ENTIDAD\tblmnu_usuarios.cs" />
+    <Compile Include="ClasesComunicativas\miestilo.cs" />
+    <Compile Include="FormCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCustomer.designer.cs">
+      <DependentUpon>FormCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCustomerType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCustomerType.designer.cs">
+      <DependentUpon>FormCustomerType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ENTIDAD\CustomerTypes.cs" />
     <Compile Include="ENTIDAD\Usuarios.cs" />
     <Compile Include="FrmBuscarServidor.cs">
       <SubType>Form</SubType>
@@ -84,6 +103,7 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -119,6 +139,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormCustomer.resx">
+      <DependentUpon>FormCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCustomerType.resx">
+      <DependentUpon>FormCustomerType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBuscarServidor.resx">
       <DependentUpon>FrmBuscarServidor.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +186,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\recursos_humanos.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="editar01.ico" />
+    <None Include="Resources\sdfsd.ico" />
+    <None Include="Resources\applic.ico" />
+    <None Include="Resources\applic_f.ico" />
+    <None Include="Resources\rechazar.ico" />
+    <None Include="Resources\cancel.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

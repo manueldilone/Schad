@@ -380,10 +380,11 @@
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(178, 166);
             this.button11.TabIndex = 63;
-            this.button11.Text = "Recursos Humanos";
+            this.button11.Text = "Customer";
             this.button11.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button12
             // 

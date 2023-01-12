@@ -32,6 +32,7 @@
             // 
             // FormLogin
             // 
+            this.BackgroundImage = global::SCHAD_TULIO.Properties.Resources.sdfsd;
             this.ClientSize = new System.Drawing.Size(552, 186);
             this.Name = "FormLogin";
             this.ResumeLayout(false);

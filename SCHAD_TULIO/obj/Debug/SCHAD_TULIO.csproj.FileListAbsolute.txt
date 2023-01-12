@@ -1,0 +1,15 @@
+C:\Users\Dilone\Downloads\jwt-api-master\jwt-api-master\Schad\SCHAD_TULIO\obj\Debug\SCHAD_TULIO.csproj.AssemblyReference.cache
+C:\Users\Dilone\Downloads\jwt-api-master\jwt-api-master\Schad\SCHAD_TULIO\obj\Debug\SCHAD_TULIO.csproj.SuggestedBindingRedirects.cache
+C:\Users\Dilone\Downloads\jwt-api-master\jwt-api-master\Schad\SCHAD_TULIO\obj\Debug\SCHAD_TULIO.FrmBuscarServidor.resources
+C:\Users\Dilone\Downloads\jwt-api-master\jwt-api-master\Schad\SCHAD_TULIO\obj\Debug\SCHAD_TULIO.home.resources
+C:\Users\Dilone\Downloads\jwt-api-master\jwt-api-master\Schad\SCHAD_TULIO\obj\Debug\SCHAD_TULIO.loguin.resources
+C:\Users\Dilone\Downloads\jwt-api-master\jwt-api-master\Schad\SCHAD_TULIO\obj\Debug\SCHAD_TULIO.FormHome.resources
+C:\Users\Dilone\Downloads\jwt-api-master\jwt-api-master\Schad\SCHAD_TULIO\obj\Debug\SCHAD_TULIO.FormLogin.resources
+C:\Users\Dilone\Downloads\jwt-api-master\jwt-api-master\Schad\SCHAD_TULIO\obj\Debug\SCHAD_TULIO.Properties.Resources.resources
+C:\Users\Dilone\Downloads\jwt-api-master\jwt-api-master\Schad\SCHAD_TULIO\obj\Debug\SCHAD_TULIO.csproj.GenerateResource.cache
+C:\Users\Dilone\Downloads\jwt-api-master\jwt-api-master\Schad\SCHAD_TULIO\obj\Debug\SCHAD_TULIO.csproj.CoreCompileInputs.cache
+C:\Users\Dilone\Downloads\jwt-api-master\jwt-api-master\Schad\SCHAD_TULIO\bin\Debug\SCHAD_TULIO.exe.config
+C:\Users\Dilone\Downloads\jwt-api-master\jwt-api-master\Schad\SCHAD_TULIO\bin\Debug\SCHAD_TULIO.exe
+C:\Users\Dilone\Downloads\jwt-api-master\jwt-api-master\Schad\SCHAD_TULIO\bin\Debug\SCHAD_TULIO.pdb
+C:\Users\Dilone\Downloads\jwt-api-master\jwt-api-master\Schad\SCHAD_TULIO\obj\Debug\SCHAD_TULIO.exe
+C:\Users\Dilone\Downloads\jwt-api-master\jwt-api-master\Schad\SCHAD_TULIO\obj\Debug\SCHAD_TULIO.pdb
